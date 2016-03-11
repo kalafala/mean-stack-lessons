@@ -8,17 +8,17 @@ var connection = mysql.createConnection({
 	host  : 'localhost',
 	user  : 'root',
 	password : 'hello',
-	database : 'mytest'
+	database : 'mean_test'
 });
 connection.connect();
-connection.query('SELECT * from mytable', function(err, rows, fields) {
+connection.query('SELECT * from employees', function(err, rows, fields) {
 	if (err) throw err;
 	console.log('Solution: ', rows);
 }); 
 
 // Simple route handler example
 app.get('/getRecords',function(req,res,next) {
-connection.query('SELECT * from mytable', function(err, rows, fields) {
+connection.query('SELECT * from employees', function(err, rows, fields) {
 	if (err) throw err;
 	console.log('Solution: ', rows);
 	res.writeHead(200, {'Content-Type': 'application/json'});

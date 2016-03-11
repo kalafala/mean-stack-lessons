@@ -1,0 +1,14 @@
+{
+  "name": "mean-stack-lessons",
+  "version": "1.0.0",
+  "description": "My simple MEAN stack",
+  "main": "mysql_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kerim",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.10.2"
+  }
+}

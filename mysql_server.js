@@ -21,8 +21,9 @@ app.get('/getRecords',function(req,res,next) {
 connection.query('SELECT * from employees', function(err, rows, fields) {
 	if (err) throw err;
 	console.log('Solution: ', rows);
-	res.writeHead(200, {'Content-Type': 'application/json'});
-	res.end(JSON.stringify(rows));
+	//res.writeHead(200, {'Content-Type': 'application/json'});
+	//res.end(JSON.stringify(rows));
+	res.json(rows);
 	}); 
 });
 

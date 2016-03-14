@@ -7,27 +7,20 @@ var app = angular.module("myModule", ["ngRoute"])
 						templateUrl:"Home.html",
 						controller:"homeController"
 						})
-				.when("/courses", {
-						templateUrl: "Courses.html",
-						controller:"coursesController"
-						})
-				.when("/students", {
-						templateUrl: "Students.html",
-						controller:"studentsController"
+				.when("/employees", {
+						templateUrl: "Employees.html",
+						controller:"employeesController"
 				})
 	})
 	.controller("homeController", function($scope) {
 			$scope.message = "Welcome Kerim";	
 	})
-	.controller("coursesController", function($scope) {
-			$scope.courses = ["Math", "Science", "Programming"];
-	})
-	.controller("studentsController", function($scope, $http, $log) {
+	.controller("employeesController", function($scope, $http, $log) {
 		$http({
                                 method: "GET",
-                                url: "http://localhost:3002/getRecords"})
+                                url: "http://localhost:3002/getEmployees"})
                 .then(function (response) {
-                                $scope.students=response.data;
+                                $scope.employees=response.data;
                                 $log.info(response);
                 }, function(reason) {
                         $scope.error = reason.data;
@@ -35,5 +28,4 @@ var app = angular.module("myModule", ["ngRoute"])
                 }
                 );
 
-	//		$scope.students = ["Kerim", "Kristen", "Alexis", "Addison"];
 	});

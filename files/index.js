@@ -22,6 +22,18 @@ var app = angular.module("myModule", ["ngRoute"])
 	.controller("coursesController", function($scope) {
 			$scope.courses = ["Math", "Science", "Programming"];
 	})
-	.controller("studentsController", function($scope) {
-			$scope.students = ["Kerim", "Kristen", "Alexis", "Addison"];
+	.controller("studentsController", function($scope, $http, $log) {
+		$http({
+                                method: "GET",
+                                url: "http://localhost:3002/getRecords"})
+                .then(function (response) {
+                                $scope.students=response.data;
+                                $log.info(response);
+                }, function(reason) {
+                        $scope.error = reason.data;
+                        $log.info(reason);
+                }
+                );
+
+	//		$scope.students = ["Kerim", "Kristen", "Alexis", "Addison"];
 	});

@@ -1,1 +1,12 @@
-Remeber to perform npm init (one time) prior to npm installi.
+Remeber to perform npm init (one time) prior to npm install.
+
+Step 1.  Start mysqli DB server i
+	sudo ./mysqld_safe --skip-grant-tables
+	source db.sql
+
+Step 2.  Start mysql_server.js (Node server which talks to DB and serves Angular code)
+i	node mysql_server.js
+To render a view:
+	Navigate to localhost:3002/index.html
+
+

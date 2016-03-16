@@ -34,12 +34,7 @@ app.get('/getEmployees',function(req,res,next) {
 connection.query('SELECT name from employees', function(err, rows, fields) {
 	if (err) throw err;
 	console.log('Solution: ', rows);
-	var solution=new Array();
-	for (i=0;i<rows.length;i++) {
-		solution.push(rows[i].name);
-	}
-	console.log('Names only: ', solution);
-	res.json(solution);
+	res.json(rows);
 	}); 
 });
 

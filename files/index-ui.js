@@ -11,7 +11,17 @@ var app = angular.module("myModule", ["ui.router"])
 						})
 				.state("employees", {
 						url: '/employees',
-						templateUrl: "Employees.html",
+						templateUrl: "Employees-ui.html",
+						controller:"employeesController"
+				})
+				.state("employees.olist", {
+						url: '/employees-olist',
+						templateUrl: "Employees-olist.html",
+						controller:"employeesController"
+				})
+				.state("employees.ulist", {
+						url: '/employees-ulist',
+						templateUrl: "Employees-ulist.html",
 						controller:"employeesController"
 				})
 	})

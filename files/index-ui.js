@@ -24,6 +24,17 @@ var app = angular.module("myModule", ["ui.router"])
 						templateUrl: "Employees-ulist.html",
 						controller:"employeesController"
 				})
+				.state("about", {
+						url: '/about',
+						views: {
+							'': {templateUrl: 'About-ui.html'},
+							'columnOne@about': {template: 'Look I am a column!'},
+							'columnTwo@about': {
+								templateUrl: 'Employees-olist.html',
+								controller:  'employeesController'
+							}
+						}
+				})
 	})
 	.controller("homeController", function($scope) {
 			$scope.message = "Welcome Kerim";	

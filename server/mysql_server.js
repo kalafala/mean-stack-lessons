@@ -2,11 +2,13 @@
 var express = require('express'),
 	app = express(),
 	port = process.env.PORT || 3002,
-        publicDir = require('path').join(__dirname,'/files');
+        publicDir = require('path').join(__dirname,'../public'),
+	commonDir = require('path').join(__dirname,'../common_libs');
 
 // Middleware to serve files from local system
 // Under the covers, will only call next() if path doesn't match the static directory
 app.use(express.static(publicDir));
+app.use(express.static(commonDir));
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({

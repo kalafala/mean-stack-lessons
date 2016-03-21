@@ -5,7 +5,8 @@ Step 1.  Start mysqli DB server i
 	source db.sql
 
 Step 2.  Start mysql_server.js (Node server which talks to DB and serves Angular code)
-i	node mysql_server.js
+	node server/mysql_server.js
+
 To render a view:
 	Navigate to localhost:3002/index.html
 
